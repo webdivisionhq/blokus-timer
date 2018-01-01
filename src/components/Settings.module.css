@@ -66,3 +66,10 @@ main {
 .checkedRight {
     padding-left: 13px;
 }
+
+@media screen and (orientation: landscape) {
+    .settings {
+        height: 100vw;
+        width: 100vh;
+    }
+}
