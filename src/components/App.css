@@ -1,0 +1,23 @@
+.App {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    height: 100vh;
+}
+
+.timer {
+    background: #222222;
+    border-radius: var(--grid);
+    margin: calc(var(--grid) * 2);
+    display: grid;
+    text-align: center;
+    align-content: center;
+    font-size: 200px;
+}
+
+.timer--active {
+    background: rgb(197, 36, 36);
+}
+
+.timer:first-child {
+    margin-bottom: 0;
+}
