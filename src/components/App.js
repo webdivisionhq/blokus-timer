@@ -7,16 +7,79 @@ const formatTime = seconds =>
 class App extends React.Component {
     state = {
         active: null,
-        timer: 20
+        timers: {
+            a: {
+                currentValue: 20,
+                intervalId: null
+            },
+            b: {
+                currentValue: 20,
+                intervalId: null
+            }
+        }
+    };
+    // TODO this is MVP version - refactor this to get rid of this state update hell!!!!!!!
+    handleButtonClick = event => {
+        const id = event.target.dataset.name;
+        const { timers, active } = this.state;
+
+        if (active !== null && active !== id) {
+            clearInterval(this.state.timers[active].intervalId);
+            this.setState(
+                prevState => ({
+                    timers: {
+                        ...prevState.timers,
+                        [active]: {
+                            ...prevState.timers[active],
+                            intervalId: null
+                        }
+                    }
+                }),
+                () => {
+                    this.setState({ active: id });
+                }
+            );
+        } else {
+            this.setState({ active: id });
+        }
+
+        if (timers[id].intervalId === null && timers[id].currentValue > 0) {
+            this.setState(prevState => ({
+                timers: {
+                    ...prevState.timers,
+                    [id]: {
+                        ...prevState.timers[id],
+                        intervalId: this.startTimer(id)
+                    }
+                }
+            }));
+        }
     };
 
-    componentDidMount() {
-        this.firstInterval = setInterval(() => {
+    startTimer(id) {
+        return setInterval(() => {
             this.setState(
-                prevState => ({ timer: prevState.timer - 1 }),
+                prevState => ({
+                    timers: {
+                        ...prevState.timers,
+                        [id]: {
+                            ...prevState.timers[id],
+                            currentValue: prevState.timers[id].currentValue - 1
+                        }
+                    }
+                }),
                 () => {
-                    if (this.state.timer === 0) {
-                        clearInterval(this.firstInterval);
+                    if (this.state.timers[id].currentValue === 0) {
+                        clearInterval(this.state.timers[id].intervalId);
+                        this.setState(prevState => ({
+                            timers: {
+                                ...prevState.timers,
+                                [id]: {
+                                    ...prevState.timers[id],
+                                    intervalId: null
+                                }
+                            }
+                        }));
                     }
                 }
             );
@@ -28,15 +91,15 @@ class App extends React.Component {
     }
 
     render() {
-        const { timer } = this.state;
+        const { timers } = this.state;
 
         return (
             <div className="App">
                 <button data-name="a" onClick={this.handleButtonClick} className="timer">
-                    {formatTime(timer)}
+                    {formatTime(timers.a.currentValue)}
                 </button>
                 <button data-name="b" onClick={this.handleButtonClick} className="timer timer--active">
-                    53:23
+                    {formatTime(timers.b.currentValue)}
                 </button>
             </div>
         );
