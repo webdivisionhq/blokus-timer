@@ -5,8 +5,20 @@
     display: grid;
     text-align: center;
     align-content: center;
-    font-size: 200px;
+    font-size: 150px;
     cursor: pointer;
+}
+
+@media (min-width: 400px) {
+    .timer {
+        font-size: 200px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .timer {
+        font-size: 250px;
+    }
 }
 
 .timer--active {
