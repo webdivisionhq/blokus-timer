@@ -8,6 +8,7 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
     grid-row-gap: calc(var(--grid) * 2);
+    z-index: 100;
 }
 
 .header {
