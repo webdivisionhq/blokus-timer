@@ -4,22 +4,31 @@ import './App.css';
 
 class App extends React.Component {
     state = {
-        active: null
+        active: null,
+        version: 0
     };
 
     handleTimerClick = timerId => {
         this.setState({ active: timerId });
     };
 
+    handlePause = () => {
+        this.setState({ active: null });
+    };
+
+    handleReset = () => {
+        this.setState(prevState => ({ version: prevState.version + 1 }));
+    };
+
     render() {
-        const { active } = this.state;
+        const { active, version } = this.state;
 
         return (
-            <div className="App">
+            <div key={version} className="App">
                 <Timer onTimerClick={this.handleTimerClick} active={active} initialValue={1200} />
                 <div className="controls">
-                    <button>PAUSE</button>
-                    <button>RESET</button>
+                    <button onClick={this.handlePause}>PAUSE</button>
+                    <button onClick={this.handleReset}>RESET</button>
                 </div>
                 <Timer onTimerClick={this.handleTimerClick} active={active} initialValue={1200} />
             </div>

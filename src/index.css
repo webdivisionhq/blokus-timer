@@ -22,6 +22,7 @@ button {
     color: inherit;
     border: 0;
     outline: none;
+    cursor: pointer;
 }
 
 code {
