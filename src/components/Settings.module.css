@@ -1,0 +1,14 @@
+.settings {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: #141414;
+    padding: calc(var(--grid) * 3);
+    font-size: 24px;
+}
+
+.icon {
+    position: relative;
+    top: 6px;
+    margin-right: var(--grid);
+}

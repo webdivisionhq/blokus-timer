@@ -21,7 +21,7 @@
 }
 
 .timer--active {
-    background: rgb(197, 36, 36);
+    background: #c52424;
 }
 
 .timer:first-child span {

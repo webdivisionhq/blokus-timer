@@ -7,35 +7,9 @@
 .controls {
     align-self: center;
     justify-self: center;
-}
-
-.controls button {
-    font-size: 20px;
-    height: calc(var(--grid) * 4);
-    line-height: calc(var(--grid) * 4);
-    border: 1px solid red;
-    background: #272727;
-    padding: 0 calc(var(--grid) * 1.5);
-    border-radius: calc(var(--grid) / 2);
-    margin: 0 var(--grid);
-}
-
-@media (min-width: 350px) {
-    .controls button {
-        padding: 0 calc(var(--grid) * 2);
-        font-size: 24px;
-        height: calc(var(--grid) * 4.5);
-        line-height: calc(var(--grid) * 4.5);
-    }
-}
-
-@media (min-width: 700px) {
-    .controls button {
-        padding: 0 calc(var(--grid) * 4);
-        font-size: 32px;
-        height: calc(var(--grid) * 6);
-        line-height: calc(var(--grid) * 6);
-    }
+    display: grid;
+    justify-items: center;
+    grid-auto-flow: column;
 }
 
 @media screen and (max-width: 1400px) and (orientation: landscape) {

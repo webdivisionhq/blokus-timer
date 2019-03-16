@@ -1,0 +1,35 @@
+.button {
+    font-size: 20px;
+    height: calc(var(--grid) * 4);
+    line-height: calc(var(--grid) * 4);
+    border: 1px solid red;
+    background: #141414;
+    padding: 0 calc(var(--grid) * 1.5);
+    border-radius: calc(var(--grid) / 2);
+    margin: 0 var(--grid);
+    display: grid;
+    align-content: center;
+}
+
+@media (min-width: 350px) {
+    .button {
+        padding: 0 calc(var(--grid) * 2);
+        font-size: 24px;
+        height: calc(var(--grid) * 4.5);
+        line-height: calc(var(--grid) * 4.5);
+    }
+}
+
+@media (min-width: 700px) {
+    .button {
+        padding: 0 calc(var(--grid) * 4);
+        font-size: 32px;
+        height: calc(var(--grid) * 6);
+        line-height: calc(var(--grid) * 6);
+    }
+}
+
+.disabled {
+    color: #3a3a3a;
+    border-color: #3a3a3a;
+}
