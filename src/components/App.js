@@ -5,6 +5,7 @@ import './App.css';
 class App extends React.Component {
     state = {
         active: null,
+        paused: false,
         version: 0
     };
 
@@ -12,25 +13,27 @@ class App extends React.Component {
         this.setState({ active: timerId });
     };
 
-    handlePause = () => {
-        this.setState({ active: null });
+    handleToggle = () => {
+        this.setState(prevState => ({
+            paused: !prevState.paused
+        }));
     };
 
     handleReset = () => {
-        this.setState(prevState => ({ version: prevState.version + 1 }));
+        this.setState(prevState => ({ version: prevState.version + 1, active: null }));
     };
 
     render() {
-        const { active, version } = this.state;
+        const { active, version, paused } = this.state;
 
         return (
             <div key={version} className="App">
-                <Timer onTimerClick={this.handleTimerClick} active={active} initialValue={1200} />
+                <Timer onTimerClick={this.handleTimerClick} active={active} initialValue={1200} isPaused={paused} />
                 <div className="controls">
-                    <button onClick={this.handlePause}>PAUSE</button>
-                    <button onClick={this.handleReset}>RESET</button>
+                    {active && <button onClick={this.handleToggle}>{paused ? 'PLAY' : 'PAUSE'}</button>}
+                    {active && <button onClick={this.handleReset}>RESET</button>}
                 </div>
-                <Timer onTimerClick={this.handleTimerClick} active={active} initialValue={1200} />
+                <Timer onTimerClick={this.handleTimerClick} active={active} initialValue={1200} isPaused={paused} />
             </div>
         );
     }

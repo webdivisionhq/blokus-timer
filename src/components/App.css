@@ -37,3 +37,9 @@
         line-height: calc(var(--grid) * 6);
     }
 }
+
+@media screen and (max-width: 1400px) and (orientation: landscape) {
+    .App {
+        height: 100vw;
+    }
+}

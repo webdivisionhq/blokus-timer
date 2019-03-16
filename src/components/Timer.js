@@ -28,7 +28,7 @@ class Timer extends React.Component {
 
         const { value } = this.state;
 
-        if (value > 0) {
+        if (value > 0 && !this.props.isPaused) {
             this.intervalId = setInterval(() => {
                 this.setState(
                     prevState => ({ value: prevState.value - 1 }),
@@ -54,7 +54,7 @@ class Timer extends React.Component {
     };
 
     checkIfActive = () => {
-        if (this.isActive()) {
+        if (this.isActive() && !this.props.isPaused) {
             this.startTimer();
             return;
         }
