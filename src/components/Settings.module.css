@@ -5,10 +5,34 @@
     background: #141414;
     padding: calc(var(--grid) * 3);
     font-size: 24px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-row-gap: calc(var(--grid) * 2);
+}
+
+.header {
+    display: grid;
+    line-height: 56px;
+    grid-template-columns: 1fr auto;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    justify-items: right;
 }
 
 .icon {
     position: relative;
     top: 6px;
     margin-right: var(--grid);
+}
+
+.max-time-input {
+    font-size: 24px;
+    line-height: 32px;
+    height: calc(32px + var(--grid) * 2);
+    width: 100%;
+    padding: var(--grid);
+    border-radius: var(--grid);
 }

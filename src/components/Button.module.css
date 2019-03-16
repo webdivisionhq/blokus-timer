@@ -33,3 +33,7 @@
     color: #3a3a3a;
     border-color: #3a3a3a;
 }
+
+.button--cta {
+    background: var(--c-red);
+}

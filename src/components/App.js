@@ -3,7 +3,6 @@ import Timer from './Timer';
 import Settings from './Settings';
 import Button from './Button';
 import { GoSettings } from 'react-icons/go';
-import cln from 'classnames';
 import './App.css';
 
 class App extends React.Component {
@@ -11,7 +10,8 @@ class App extends React.Component {
         active: null,
         paused: false,
         version: 0,
-        settings: false
+        settings: false,
+        maxValue: 1200
     };
 
     handleTimerClick = timerId => {
@@ -32,13 +32,20 @@ class App extends React.Component {
         this.setState(prevState => ({ settings: !prevState.settings, paused: !prevState.settings }));
     };
 
+    handleSubmit = maxTime => {
+        this.setState({ maxValue: maxTime * 60 }, () => {
+            this.handleReset();
+            this.toggleSettings();
+        });
+    };
+
     render() {
-        const { active, version, paused, settings } = this.state;
+        const { active, version, paused, settings, maxValue } = this.state;
 
         return (
             <div key={version} className="App">
-                {settings && <Settings />}
-                <Timer onTimerClick={this.handleTimerClick} active={active} initialValue={1200} isPaused={paused} />
+                {settings && <Settings onCancel={this.toggleSettings} onSubmit={this.handleSubmit} />}
+                <Timer onTimerClick={this.handleTimerClick} active={active} initialValue={maxValue} isPaused={paused} />
                 <div className="controls">
                     <Button disabled={!active} onClick={this.handleToggle}>
                         {paused ? 'PLAY' : 'PAUSE'}
@@ -50,7 +57,7 @@ class App extends React.Component {
                         <GoSettings color="#c52424" size={25} />
                     </Button>
                 </div>
-                <Timer onTimerClick={this.handleTimerClick} active={active} initialValue={1200} isPaused={paused} />
+                <Timer onTimerClick={this.handleTimerClick} active={active} initialValue={maxValue} isPaused={paused} />
             </div>
         );
     }
