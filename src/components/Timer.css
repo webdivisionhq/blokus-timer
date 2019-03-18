@@ -24,6 +24,10 @@
     background: var(--c-red);
 }
 
-.timer:first-child span {
+.two:first-child span {
     transform: rotate(180deg);
+}
+
+.timmer--hidden {
+    display: none;
 }

@@ -17,6 +17,12 @@
     grid-template-columns: 1fr auto;
 }
 
+main {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    grid-gap: calc(var(--grid) * 2);
+}
+
 .footer {
     display: grid;
     grid-template-columns: 1fr auto auto;
