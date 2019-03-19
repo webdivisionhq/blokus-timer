@@ -27,7 +27,3 @@
 .two:first-child span {
     transform: rotate(180deg);
 }
-
-.timmer--hidden {
-    display: none;
-}

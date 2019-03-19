@@ -13,8 +13,7 @@ class Timer extends React.Component {
   timerId = Date.now();
 
   state = {
-    value: this.props.initialValue,
-    isHidden: this.props.isHidden
+    value: this.props.initialValue
   };
 
   handleButtonClick = () => {
@@ -70,15 +69,14 @@ class Timer extends React.Component {
   };
 
   render() {
-    const { value, isHidden } = this.state;
+    const { value } = this.state;
 
     this.checkIfActive();
 
     const classes = classnames(
       "timer",
-      { "timer--active": this.isActive() },
-      { "timmer--hidden": isHidden }
-    );
+      { "timer--active": this.isActive() }
+      );
 
     return (
       <button onClick={this.handleButtonClick} className={classes}>

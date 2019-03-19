@@ -44,16 +44,6 @@ class App extends React.Component {
       this.handleReset();
       this.toggleSettings();
     });
-    /* this.handleHiddenTimer(); */
-  };
-
-  handleHiddenTimer = () => {
-    const { userCount } = this.state;
-    if (userCount === "four") {
-      return false;
-    } else {
-      return true;
-    }
   };
 
   render() {
@@ -72,6 +62,7 @@ class App extends React.Component {
           <Settings
             onCancel={this.toggleSettings}
             onSubmit={this.handleSubmit}
+            userCount={userCount}
           />
         )}
         <div className={userCount}>
@@ -81,13 +72,14 @@ class App extends React.Component {
             initialValue={maxValue}
             isPaused={paused}
           />
-          <Timer
-            onTimerClick={this.handleTimerClick}
-            active={active}
-            initialValue={maxValue}
-            isPaused={paused}
-            isHidden={this.handleHiddenTimer()}
-          />
+          {userCount === 'four' && (
+            <Timer
+              onTimerClick={this.handleTimerClick}
+              active={active}
+              initialValue={maxValue}
+              isPaused={paused}
+            />
+          )}
         </div>
         <div className="controls">
           <Button disabled={!active} onClick={this.handleToggle}>
@@ -107,13 +99,14 @@ class App extends React.Component {
             initialValue={maxValue}
             isPaused={paused}
           />
-          <Timer
-            onTimerClick={this.handleTimerClick}
-            active={active}
-            initialValue={maxValue}
-            isPaused={paused}
-            isHidden={this.handleHiddenTimer()}
-          />
+          {userCount === 'four' && (
+            <Timer
+              onTimerClick={this.handleTimerClick}
+              active={active}
+              initialValue={maxValue}
+              isPaused={paused}
+            />
+          )}
         </div>
       </div>
     );
