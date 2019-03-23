@@ -1,11 +1,12 @@
-import React from "react";
-import "./Timer.css";
-import classnames from "classnames";
+import React from 'react';
+import './Timer.css';
+import classnames from 'classnames';
+import { MdRefresh as RotateIcon } from 'react-icons/md';
 
 const formatTime = seconds =>
-  new Intl.DateTimeFormat("pl-PL", {
-    minute: "numeric",
-    second: "numeric"
+  new Intl.DateTimeFormat('pl-PL', {
+    minute: 'numeric',
+    second: 'numeric'
   }).format(new Date(seconds * 1000));
 
 class Timer extends React.Component {
@@ -13,7 +14,8 @@ class Timer extends React.Component {
   timerId = Date.now();
 
   state = {
-    value: this.props.initialValue
+    value: this.props.initialValue,
+    currentAngle: 0
   };
 
   handleButtonClick = () => {
@@ -22,6 +24,13 @@ class Timer extends React.Component {
     onTimerClick(this.timerId);
 
     this.startTimer();
+  };
+
+  rotateTimer = event => {
+    event.stopPropagation();
+    this.setState(prevState => ({
+      currentAngle: (prevState.currentAngle + 90) % 360
+    }));
   };
 
   startTimer = () => {
@@ -69,18 +78,20 @@ class Timer extends React.Component {
   };
 
   render() {
-    const { value } = this.state;
+    const { value, currentAngle } = this.state;
 
     this.checkIfActive();
 
-    const classes = classnames(
-      "timer",
-      { "timer--active": this.isActive() }
-      );
+    const classes = classnames('timer', { 'timer--active': this.isActive() });
 
     return (
       <button onClick={this.handleButtonClick} className={classes}>
-        <span>{formatTime(value)}</span>
+        <div style={{ transform: `rotate(${currentAngle}deg)` }}>
+          {formatTime(value)}
+        </div>
+        <span onClick={this.rotateTimer}>
+          <RotateIcon size={25} />
+        </span>
       </button>
     );
   }

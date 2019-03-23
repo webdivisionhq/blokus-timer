@@ -18,6 +18,58 @@
   grid-auto-flow: column;
 }
 
+.App--four button div {
+  font-size: 70px;
+}
+
+@media (min-width: 350px) {
+  .App--four button div {
+    font-size: 80px;
+  }
+}
+
+@media (min-width: 400px) {
+  .App--four button div {
+    font-size: 95px;
+  }
+}
+
+@media (min-width: 700px) {
+  .App--four button div {
+    font-size: 170px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .App--four button div {
+    font-size: 220px;
+  }
+}
+
+@media screen and (min-width: 500px) and (orientation: landscape) {
+  .App--four button div {
+    font-size: 65px;
+  }
+}
+
+@media screen and (min-width: 600px) and (orientation: landscape) {
+  .App--four button div {
+    font-size: 80px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (orientation: landscape) {
+  .App--four button div {
+    font-size: 140px;
+  }
+}
+
+@media screen and (min-width: 1300px) and (orientation: landscape) {
+  .App--four button div {
+    font-size: 210px;
+  }
+}
+
 @media screen and (max-width: 1400px) and (orientation: landscape) {
   .App {
     height: 100vw;

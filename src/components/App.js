@@ -1,10 +1,10 @@
-import React from "react";
-import Timer from "./Timer";
-import Settings from "./Settings";
-import Button from "./Button";
-import classnames from "classnames";
-import { GoSettings } from "react-icons/go";
-import "./App.css";
+import React from 'react';
+import Timer from './Timer';
+import Settings from './Settings';
+import Button from './Button';
+import classnames from 'classnames';
+import { GoSettings as SettingsIcon } from 'react-icons/go';
+import './App.css';
 
 class App extends React.Component {
   state = {
@@ -13,7 +13,7 @@ class App extends React.Component {
     version: 0,
     settings: false,
     maxValue: 1200,
-    userCount: "two"
+    userCount: 'four'
   };
 
   handleTimerClick = timerId => {
@@ -57,7 +57,7 @@ class App extends React.Component {
       userCount
     } = this.state;
 
-    const classes = classnames('App', { 'App--four': (userCount === 'four') });
+    const classes = classnames('App', { 'App--four': userCount === 'four' });
 
     return (
       <div key={version} className={classes}>
@@ -84,13 +84,13 @@ class App extends React.Component {
         )}
         <div className="controls">
           <Button disabled={!active} onClick={this.handleToggle}>
-            {paused ? "PLAY" : "PAUSE"}
+            {paused ? 'PLAY' : 'PAUSE'}
           </Button>
           <Button disabled={!active} onClick={this.handleReset}>
             RESET
           </Button>
           <Button onClick={this.toggleSettings}>
-            <GoSettings color="#c52424" size={25} />
+            <SettingsIcon color="#c52424" size={25} />
           </Button>
         </div>
         <Timer

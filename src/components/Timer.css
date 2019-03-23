@@ -1,25 +1,48 @@
 .timer {
-    background: #222222;
-    border-radius: var(--grid);
-    margin: calc(var(--grid) * 2);
-    display: grid;
-    text-align: center;
-    align-content: center;
-    font-size: 150px;
+  background: #222222;
+  border-radius: var(--grid);
+  margin: calc(var(--grid) * 2);
+  display: grid;
+  text-align: center;
+  align-content: center;
+}
+
+button {
+  position: relative;
+}
+
+button div {
+  font-size: 150px;
+}
+
+button span {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 40px;
+  height: 40px;
+  color: #c52424;
+  display: grid;
+  justify-content: center;
+  align-content: center;
 }
 
 @media (min-width: 400px) {
-    .timer {
-        font-size: 200px;
-    }
+  button div {
+    font-size: 200px;
+  }
 }
 
 @media (min-width: 1024px) {
-    .timer {
-        font-size: 250px;
-    }
+  button div {
+    font-size: 250px;
+  }
 }
 
 .timer--active {
-    background: var(--c-red);
+  background: var(--c-red);
+}
+
+.timer--active span {
+  color: #222222;
 }
