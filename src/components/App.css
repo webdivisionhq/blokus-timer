@@ -1,29 +1,25 @@
 .App {
-    display: grid;
-    grid-template-rows: 1fr auto 1fr;
-    height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  grid-template-columns: 1fr;
+  height: 100vh;
+}
+
+.App--four {
+  grid-template-columns: 1fr 1fr;
 }
 
 .controls {
-    align-self: center;
-    justify-self: center;
-    display: grid;
-    justify-items: center;
-    grid-auto-flow: column;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  justify-items: center;
+  grid-column: 1 / span 2;
+  grid-auto-flow: column;
 }
 
 @media screen and (max-width: 1400px) and (orientation: landscape) {
-    .App {
-        height: 100vw;
-    }
-}
-
-.four {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-}
-
-.two {
-    display: grid;
+  .App {
+    height: 100vw;
+  }
 }

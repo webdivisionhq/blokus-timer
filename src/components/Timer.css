@@ -23,7 +23,3 @@
 .timer--active {
     background: var(--c-red);
 }
-
-.two:first-child span {
-    transform: rotate(180deg);
-}

@@ -2,6 +2,7 @@ import React from "react";
 import Timer from "./Timer";
 import Settings from "./Settings";
 import Button from "./Button";
+import classnames from "classnames";
 import { GoSettings } from "react-icons/go";
 import "./App.css";
 
@@ -56,8 +57,10 @@ class App extends React.Component {
       userCount
     } = this.state;
 
+    const classes = classnames('App', { 'App--four': (userCount === 'four') });
+
     return (
-      <div key={version} className="App">
+      <div key={version} className={classes}>
         {settings && (
           <Settings
             onCancel={this.toggleSettings}
@@ -65,22 +68,20 @@ class App extends React.Component {
             userCount={userCount}
           />
         )}
-        <div className={userCount}>
+        <Timer
+          onTimerClick={this.handleTimerClick}
+          active={active}
+          initialValue={maxValue}
+          isPaused={paused}
+        />
+        {userCount === 'four' && (
           <Timer
             onTimerClick={this.handleTimerClick}
             active={active}
             initialValue={maxValue}
             isPaused={paused}
           />
-          {userCount === 'four' && (
-            <Timer
-              onTimerClick={this.handleTimerClick}
-              active={active}
-              initialValue={maxValue}
-              isPaused={paused}
-            />
-          )}
-        </div>
+        )}
         <div className="controls">
           <Button disabled={!active} onClick={this.handleToggle}>
             {paused ? "PLAY" : "PAUSE"}
@@ -92,22 +93,20 @@ class App extends React.Component {
             <GoSettings color="#c52424" size={25} />
           </Button>
         </div>
-        <div className={userCount}>
+        <Timer
+          onTimerClick={this.handleTimerClick}
+          active={active}
+          initialValue={maxValue}
+          isPaused={paused}
+        />
+        {userCount === 'four' && (
           <Timer
             onTimerClick={this.handleTimerClick}
             active={active}
             initialValue={maxValue}
             isPaused={paused}
           />
-          {userCount === 'four' && (
-            <Timer
-              onTimerClick={this.handleTimerClick}
-              active={active}
-              initialValue={maxValue}
-              isPaused={paused}
-            />
-          )}
-        </div>
+        )}
       </div>
     );
   }
