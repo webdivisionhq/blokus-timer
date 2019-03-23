@@ -1,5 +1,5 @@
 import React from 'react';
-import './Timer.css';
+import css from './Timer.module.css';
 import classnames from 'classnames';
 import { MdRefresh as RotateIcon } from 'react-icons/md';
 
@@ -79,17 +79,23 @@ class Timer extends React.Component {
 
   render() {
     const { value, currentAngle } = this.state;
+    const { className } = this.props;
 
     this.checkIfActive();
 
-    const classes = classnames('timer', { 'timer--active': this.isActive() });
+    const classes = classnames(css.timer, className, {
+      [css['timer--active']]: this.isActive()
+    });
 
     return (
       <button onClick={this.handleButtonClick} className={classes}>
-        <div style={{ transform: `rotate(${currentAngle}deg)` }}>
+        <div
+          className={css.time}
+          style={{ transform: `rotate(${currentAngle}deg)` }}
+        >
           {formatTime(value)}
         </div>
-        <span onClick={this.rotateTimer}>
+        <span className={css.rotateIcon} onClick={this.rotateTimer}>
           <RotateIcon size={25} />
         </span>
       </button>

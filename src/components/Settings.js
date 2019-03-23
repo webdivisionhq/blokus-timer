@@ -1,19 +1,16 @@
-import React from "react";
-import Button from "./Button";
-import { GoSettings } from "react-icons/go";
-import css from "./Settings.module.css";
+import React from 'react';
+import Button from './Button';
+import { GoSettings } from 'react-icons/go';
+import css from './Settings.module.css';
 
 class Settings extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      userCount: this.props.userCount,
-      input: "10"
-    };
-  }
+  state = {
+    userCount: this.props.userCount,
+    input: '10'
+  };
 
   handleSubmit = event => {
-    const { input, userCount} = this.state;
+    const { input, userCount } = this.state;
     event.preventDefault();
     this.props.onSubmit(input, userCount);
   };
@@ -43,7 +40,7 @@ class Settings extends React.Component {
               MAX TIME
               <input
                 ref="input"
-                className={css["max-time-input"]}
+                className={css['max-time-input']}
                 onChange={this.handleTimeChange}
               />
             </label>
@@ -54,7 +51,7 @@ class Settings extends React.Component {
                   type="radio"
                   name="users_count"
                   value="two"
-                  checked={this.state.userCount === "two"}
+                  checked={this.state.userCount === 'two'}
                   onChange={this.handleUserCountChange}
                 />
                 2
@@ -64,7 +61,7 @@ class Settings extends React.Component {
                   type="radio"
                   name="users_count"
                   value="four"
-                  checked={this.state.userCount === "four"}
+                  checked={this.state.userCount === 'four'}
                   onChange={this.handleUserCountChange}
                 />
                 4

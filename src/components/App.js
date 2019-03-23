@@ -4,7 +4,7 @@ import Settings from './Settings';
 import Button from './Button';
 import classnames from 'classnames';
 import { GoSettings as SettingsIcon } from 'react-icons/go';
-import './App.css';
+import css from './App.module.css';
 
 class App extends React.Component {
   state = {
@@ -13,7 +13,7 @@ class App extends React.Component {
     version: 0,
     settings: false,
     maxValue: 1200,
-    userCount: 'four'
+    userCount: 'two'
   };
 
   handleTimerClick = timerId => {
@@ -57,7 +57,11 @@ class App extends React.Component {
       userCount
     } = this.state;
 
-    const classes = classnames('App', { 'App--four': userCount === 'four' });
+    const classes = classnames(css.App, {
+      [css['App--four']]: userCount === 'four'
+    });
+
+    const timerClass = userCount === 'four' ? 'responsive' : undefined;
 
     return (
       <div key={version} className={classes}>
@@ -73,6 +77,7 @@ class App extends React.Component {
           active={active}
           initialValue={maxValue}
           isPaused={paused}
+          className={timerClass}
         />
         {userCount === 'four' && (
           <Timer
@@ -80,9 +85,10 @@ class App extends React.Component {
             active={active}
             initialValue={maxValue}
             isPaused={paused}
+            className={timerClass}
           />
         )}
-        <div className="controls">
+        <div className={css.controls}>
           <Button disabled={!active} onClick={this.handleToggle}>
             {paused ? 'PLAY' : 'PAUSE'}
           </Button>
@@ -98,6 +104,7 @@ class App extends React.Component {
           active={active}
           initialValue={maxValue}
           isPaused={paused}
+          className={timerClass}
         />
         {userCount === 'four' && (
           <Timer
@@ -105,6 +112,7 @@ class App extends React.Component {
             active={active}
             initialValue={maxValue}
             isPaused={paused}
+            className={timerClass}
           />
         )}
       </div>
