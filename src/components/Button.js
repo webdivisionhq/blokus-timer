@@ -5,7 +5,7 @@ import css from './Button.module.css';
 function Button({ children, disabled, className, variant, ...rest }) {
     const classes = cln(css.button, className, {
         [css[`button--${variant}`]]: variant,
-        [css.disabled]: disabled
+        [css.disabled]: disabled,
     });
 
     return (

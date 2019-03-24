@@ -4,7 +4,7 @@ function Foo() {
     };
 
     return {
-        blach
+        blach,
     };
 }
 
