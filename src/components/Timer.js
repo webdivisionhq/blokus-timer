@@ -1,7 +1,7 @@
 import React from 'react';
 import css from './Timer.module.css';
 import classnames from 'classnames';
-import { MdRefresh as RotateIcon } from 'react-icons/md';
+import { MdRefresh as RotationIcon } from 'react-icons/md';
 
 const formatTime = seconds =>
   new Intl.DateTimeFormat('pl-PL', {
@@ -95,8 +95,8 @@ class Timer extends React.Component {
         >
           {formatTime(value)}
         </div>
-        <span className={css.rotateIcon} onClick={this.rotateTimer}>
-          <RotateIcon size={25} />
+        <span className={css.rotationIcon} onClick={this.rotateTimer}>
+          <RotationIcon size={25} />
         </span>
       </button>
     );

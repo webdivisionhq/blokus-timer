@@ -5,17 +5,22 @@
   display: grid;
   text-align: center;
   align-content: center;
-}
-
-button {
   position: relative;
 }
 
-.time {
-  font-size: 150px;
+.timer--active {
+  background: var(--c-red);
 }
 
-.rotateIcon {
+.time {
+  font-size: 130px;
+}
+
+:global(.responsive) .time {
+  font-size: 70px !important;
+}
+
+.rotationIcon {
   position: absolute;
   right: 5px;
   bottom: 5px;
@@ -27,73 +32,86 @@ button {
   align-content: center;
 }
 
-@media (min-width: 400px) {
-  .time {
-    font-size: 200px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .time {
-    font-size: 250px;
-  }
-}
-
-.timer--active {
-  background: var(--c-red);
-}
-
-.timer--active span {
+.timer--active .rotationIcon {
   color: #222222;
-}
-
-:global(.responsive) .time {
-  font-size: 70px !important;
+  border: 1px solid red;
 }
 
 @media (min-width: 350px) {
   :global(.responsive) .time {
     font-size: 80px !important;
   }
+
+  .time {
+    font-size: 145px;
+  }
 }
 
 @media (min-width: 400px) {
+  .time {
+    font-size: 175px;
+  }
+
   :global(.responsive) .time {
     font-size: 95px !important;
   }
 }
 
 @media (min-width: 700px) {
+  .time {
+    font-size: 220px;
+  }
+
   :global(.responsive) .time {
     font-size: 170px !important;
   }
 }
 
 @media (min-width: 1024px) {
+  .time {
+    font-size: 290px;
+  }
+
   :global(.responsive) .time {
     font-size: 220px !important;
   }
 }
 
 @media screen and (min-width: 500px) and (orientation: landscape) {
+  .time {
+    font-size: 130px;
+  }
+
   :global(.responsive) .time {
     font-size: 65px !important;
   }
 }
 
 @media screen and (min-width: 600px) and (orientation: landscape) {
+  .time {
+    font-size: 150px;
+  }
+
   :global(.responsive) .time {
     font-size: 80px !important;
   }
 }
 
 @media screen and (min-width: 1024px) and (orientation: landscape) {
+  .time {
+    font-size: 210px;
+  }
+
   :global(.responsive) .time {
     font-size: 140px !important;
   }
 }
 
 @media screen and (min-width: 1300px) and (orientation: landscape) {
+  .time {
+    font-size: 270px;
+  }
+
   :global(.responsive) .time {
     font-size: 210px !important;
   }
