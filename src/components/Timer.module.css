@@ -34,7 +34,6 @@
 
 .timer--active .rotationIcon {
   color: #222222;
-  border: 1px solid red;
 }
 
 @media (min-width: 350px) {
