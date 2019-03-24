@@ -1,3 +1,6 @@
 {
-    "extends": ["react-app", "plugin:react/recommended", "plugin:prettier/recommended", "prettier/react"]
+    "extends": ["react-app", "plugin:react/recommended", "plugin:prettier/recommended", "prettier/react"],
+    "rules": {
+        "react/prop-types": "warn"
+    }
 }
