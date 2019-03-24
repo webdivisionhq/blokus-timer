@@ -1,0 +1,118 @@
+.timer {
+  background: #222222;
+  border-radius: var(--grid);
+  margin: calc(var(--grid) * 2);
+  display: grid;
+  text-align: center;
+  align-content: center;
+  position: relative;
+}
+
+.timer--active {
+  background: var(--c-red);
+}
+
+.time {
+  font-size: 130px;
+}
+
+:global(.responsive) .time {
+  font-size: 70px !important;
+}
+
+.rotationIcon {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 40px;
+  height: 40px;
+  color: #c52424;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.timer--active .rotationIcon {
+  color: #222222;
+  border: 1px solid red;
+}
+
+@media (min-width: 350px) {
+  :global(.responsive) .time {
+    font-size: 80px !important;
+  }
+
+  .time {
+    font-size: 145px;
+  }
+}
+
+@media (min-width: 400px) {
+  .time {
+    font-size: 175px;
+  }
+
+  :global(.responsive) .time {
+    font-size: 95px !important;
+  }
+}
+
+@media (min-width: 700px) {
+  .time {
+    font-size: 220px;
+  }
+
+  :global(.responsive) .time {
+    font-size: 170px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .time {
+    font-size: 290px;
+  }
+
+  :global(.responsive) .time {
+    font-size: 220px !important;
+  }
+}
+
+@media screen and (min-width: 500px) and (orientation: landscape) {
+  .time {
+    font-size: 130px;
+  }
+
+  :global(.responsive) .time {
+    font-size: 65px !important;
+  }
+}
+
+@media screen and (min-width: 600px) and (orientation: landscape) {
+  .time {
+    font-size: 150px;
+  }
+
+  :global(.responsive) .time {
+    font-size: 80px !important;
+  }
+}
+
+@media screen and (min-width: 1024px) and (orientation: landscape) {
+  .time {
+    font-size: 210px;
+  }
+
+  :global(.responsive) .time {
+    font-size: 140px !important;
+  }
+}
+
+@media screen and (min-width: 1300px) and (orientation: landscape) {
+  .time {
+    font-size: 270px;
+  }
+
+  :global(.responsive) .time {
+    font-size: 210px !important;
+  }
+}
