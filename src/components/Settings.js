@@ -38,7 +38,7 @@ class Settings extends React.Component {
                     <main>
                         <label>
                             MAX TIME
-                            <input ref="input" className={css['max-time-input']} onChange={this.handleTimeChange} />
+                            <input className={css['max-time-input']} onChange={this.handleTimeChange} />
                         </label>
                         <div className="users">
                             USERS COUNT
