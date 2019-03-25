@@ -1,6 +1,7 @@
 import React from 'react';
-import Button from './Button';
+import PropTypes from 'prop-types';
 import { GoSettings } from 'react-icons/go';
+import Button from './Button';
 import css from './Settings.module.css';
 
 class Settings extends React.Component {
@@ -75,5 +76,15 @@ class Settings extends React.Component {
         );
     }
 }
+
+Settings.propTypes = {
+    userCount: PropTypes.oneOf(['two', 'four']),
+    onSubmit: PropTypes.func.isRequired,
+    onCancel: PropTypes.func.isRequired,
+};
+
+Settings.defaultProps = {
+    userCount: 'two',
+};
 
 export default Settings;

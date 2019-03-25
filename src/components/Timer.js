@@ -1,7 +1,8 @@
 import React from 'react';
-import css from './Timer.module.css';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { MdRefresh as RotationIcon } from 'react-icons/md';
+import css from './Timer.module.css';
 
 const formatTime = seconds =>
     new Intl.DateTimeFormat('pl-PL', {
@@ -99,5 +100,18 @@ class Timer extends React.Component {
         );
     }
 }
+
+Timer.propTypes = {
+    initialValue: PropTypes.number.isRequired,
+    onTimerClick: PropTypes.func.isRequired,
+    isPaused: PropTypes.bool.isRequired,
+    active: PropTypes.number,
+    className: PropTypes.string,
+};
+
+Timer.defaultProps = {
+    active: null,
+    className: '',
+};
 
 export default Timer;
