@@ -1,8 +1,8 @@
 import React from 'react';
-import Button from './Button';
-import { GoSettings } from 'react-icons/go';
-import css from './Settings.module.css';
 import PropTypes from 'prop-types';
+import { GoSettings } from 'react-icons/go';
+import Button from './Button';
+import css from './Settings.module.css';
 
 class Settings extends React.Component {
     state = {

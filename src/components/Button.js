@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cln from 'classnames';
 import css from './Button.module.css';
-import PropTypes from 'prop-types';
 
 function Button({ children, disabled, className, variant, ...rest }) {
     const classes = cln(css.button, className, {
@@ -17,10 +17,10 @@ function Button({ children, disabled, className, variant, ...rest }) {
 }
 
 Button.propTypes = {
-    children: PropTypes.node,
+    children: PropTypes.node.isRequired,
     disabled: PropTypes.bool,
     className: PropTypes.string,
-    variant: PropTypes.string,
+    variant: PropTypes.oneOf(['cta']),
 };
 
 export default Button;
