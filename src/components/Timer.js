@@ -105,7 +105,7 @@ Timer.propTypes = {
     initialValue: PropTypes.number.isRequired,
     onTimerClick: PropTypes.func.isRequired,
     isPaused: PropTypes.bool.isRequired,
-    active: PropTypes.bool,
+    active: PropTypes.number,
     className: PropTypes.oneOf(['responsive', undefined]),
 };
 
