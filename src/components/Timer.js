@@ -109,4 +109,9 @@ Timer.propTypes = {
     className: PropTypes.string,
 };
 
+Timer.defaultProps = {
+    active: null,
+    className: '',
+};
+
 export default Timer;

@@ -83,4 +83,8 @@ Settings.propTypes = {
     onCancel: PropTypes.func.isRequired,
 };
 
+Settings.defaultProps = {
+    userCount: 'two',
+};
+
 export default Settings;

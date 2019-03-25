@@ -23,4 +23,10 @@ Button.propTypes = {
     variant: PropTypes.oneOf(['cta']),
 };
 
+Button.defaultProps = {
+    disabled: false,
+    className: '',
+    variant: undefined,
+};
+
 export default Button;
