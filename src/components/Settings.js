@@ -8,13 +8,13 @@ import css from './Settings.module.css';
 class Settings extends React.Component {
     state = {
         userCount: this.props.userCount,
-        input: '10',
+        currentTime: this.props.defaultTime,
     };
 
     handleSubmit = event => {
-        const { input, userCount } = this.state;
+        const { currentTime, userCount } = this.state;
         event.preventDefault();
-        this.props.onSubmit(input, userCount);
+        this.props.onSubmit(+currentTime, userCount);
     };
 
     handleUserCountChange = (checked) => {
@@ -25,7 +25,7 @@ class Settings extends React.Component {
 
     handleTimeChange = event => {
         this.setState({
-            input: event.target.value,
+            currentTime: event.target.value,
         });
     };
 
@@ -39,7 +39,7 @@ class Settings extends React.Component {
                     </header>
                     <main className={css.settingsGrid}>
                             <span>MAX TIME <span className={css.minutes}>(min)</span></span>
-                            <input className={css['max-time-input']} onChange={this.handleTimeChange} placeholder={10}/>
+                            <input className={css['max-time-input']} onChange={this.handleTimeChange} value={this.state.currentTime}/>
                        
                             USERS COUNT
                             <Switch 
@@ -68,6 +68,7 @@ Settings.propTypes = {
     userCount: PropTypes.oneOf(['two', 'four']),
     onSubmit: PropTypes.func.isRequired,
     onCancel: PropTypes.func.isRequired,
+    defaultTime: PropTypes.number.isRequired,
 };
 
 Settings.defaultProps = {

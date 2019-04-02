@@ -59,7 +59,7 @@ class App extends React.Component {
         return (
             <div key={version} className={classes}>
                 {settings && (
-                    <Settings onCancel={this.toggleSettings} onSubmit={this.handleSubmit} userCount={userCount} />
+                    <Settings onCancel={this.toggleSettings} onSubmit={this.handleSubmit} userCount={userCount} defaultTime={maxValue/60}/>
                 )}
                 <Timer
                     onTimerClick={this.handleTimerClick}
