@@ -6,7 +6,7 @@
     padding: calc(var(--grid) * 3);
     font-size: 24px;
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto auto auto 1fr;
     grid-row-gap: calc(var(--grid) * 4);
     z-index: 100;
 }
@@ -34,6 +34,13 @@ main {
     position: relative;
     top: 6px;
     margin-right: var(--grid);
+}
+
+.settingsGrid {
+    display: grid;
+    grid-template-columns: 1fr 60px;
+    grid-template-rows: auto auto;
+    grid-row-gap: calc(var(--grid) * 3)
 }
 
 .max-time-input {

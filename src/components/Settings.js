@@ -37,12 +37,10 @@ class Settings extends React.Component {
                         <h1>Settings</h1>
                         <GoSettings className={css.icon} size={40} />
                     </header>
-                    <main>
-                        <label>
+                    <main className={css.settingsGrid}>
                             MAX TIME
                             <input className={css['max-time-input']} onChange={this.handleTimeChange} />
-                        </label>
-                        <div className="users">
+                       
                             USERS COUNT
                             <Switch 
                                 onChange={this.handleUserCountChange}
@@ -52,7 +50,7 @@ class Settings extends React.Component {
                                 onColor="#c52424"
                                 offColor="#c52424"
                                 />
-                       </div>
+                       
                     </main>
                     <footer className={css.footer}>
                         <Button type="button" onClick={this.props.onCancel} className="foo">
