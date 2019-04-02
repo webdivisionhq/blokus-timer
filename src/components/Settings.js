@@ -38,8 +38,8 @@ class Settings extends React.Component {
                         <GoSettings className={css.icon} size={40} />
                     </header>
                     <main className={css.settingsGrid}>
-                            MAX TIME
-                            <input className={css['max-time-input']} onChange={this.handleTimeChange} />
+                            <span>MAX TIME <span className={css.minutes}>(min)</span></span>
+                            <input className={css['max-time-input']} onChange={this.handleTimeChange} placeholder={10}/>
                        
                             USERS COUNT
                             <Switch 

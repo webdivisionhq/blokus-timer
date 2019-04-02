@@ -7,14 +7,15 @@
     font-size: 24px;
     display: grid;
     grid-template-rows: auto auto auto 1fr;
-    grid-row-gap: calc(var(--grid) * 4);
+    grid-row-gap: calc(var(--grid) * 6);
     z-index: 100;
 }
 
 .header {
     display: grid;
     line-height: 56px;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: calc(var(--grid) * 2);
 }
 
 main {
@@ -33,7 +34,6 @@ main {
 .icon {
     position: relative;
     top: 6px;
-    margin-right: var(--grid);
 }
 
 .settingsGrid {
@@ -43,11 +43,14 @@ main {
     grid-row-gap: calc(var(--grid) * 3)
 }
 
+.minutes {
+    font-size: 18px;
+}
+
 .max-time-input {
     font-size: 24px;
-    line-height: 32px;
+    text-align: center;
     height: calc(var(--grid) * 5);
-    padding: var(--grid);
     border-radius: var(--grid);
 }
 
