@@ -2,7 +2,7 @@
     font-size: 20px;
     height: calc(var(--grid) * 4);
     line-height: calc(var(--grid) * 4);
-    border: 1px solid red;
+    border: 1px solid var(--c-red);
     background: #141414;
     padding: 0 calc(var(--grid) * 1.5);
     border-radius: calc(var(--grid) / 2);
