@@ -25,7 +25,8 @@ main {
 
 .footer {
     display: grid;
-    grid-template-columns: 1fr auto auto;
+    grid-template-columns: 1fr auto;
+    grid-column-gap: calc(var(--grid) * 2);
     justify-items: right;
 }
 

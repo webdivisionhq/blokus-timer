@@ -6,7 +6,6 @@
     background: #141414;
     padding: 0 calc(var(--grid) * 1.5);
     border-radius: calc(var(--grid) / 2);
-    margin: 0 var(--grid);
     display: grid;
     align-content: center;
 }
