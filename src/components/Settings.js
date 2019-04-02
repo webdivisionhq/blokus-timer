@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { GoSettings } from 'react-icons/go';
+import Switch from 'react-switch';
 import Button from './Button';
 import css from './Settings.module.css';
 
@@ -16,10 +17,10 @@ class Settings extends React.Component {
         this.props.onSubmit(input, userCount);
     };
 
-    handleUserCountChange = event => {
-        this.setState({
-            userCount: event.target.value,
-        });
+    handleUserCountChange = (checked) => {
+            this.setState({
+                userCount: checked ? "four": "two",
+            });
     };
 
     handleTimeChange = event => {
@@ -43,27 +44,15 @@ class Settings extends React.Component {
                         </label>
                         <div className="users">
                             USERS COUNT
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="users_count"
-                                    value="two"
-                                    checked={this.state.userCount === 'two'}
-                                    onChange={this.handleUserCountChange}
+                            <Switch 
+                                onChange={this.handleUserCountChange}
+                                checked={this.state.userCount === "four"}
+                                uncheckedIcon={<span className={css.checkedLeft}>2</span>}
+                                checkedIcon={<span className={css.checkedRight}>4</span>}
+                                onColor="#c52424"
+                                offColor="#c52424"
                                 />
-                                2
-                            </label>
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="users_count"
-                                    value="four"
-                                    checked={this.state.userCount === 'four'}
-                                    onChange={this.handleUserCountChange}
-                                />
-                                4
-                            </label>
-                        </div>
+                       </div>
                     </main>
                     <footer className={css.footer}>
                         <Button type="button" onClick={this.props.onCancel} className="foo">

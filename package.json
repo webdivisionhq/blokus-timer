@@ -16,7 +16,8 @@
         "classnames": "^2.2.6",
         "react": "^16.8.4",
         "react-dom": "^16.8.4",
-        "react-icons": "^3.5.0"
+        "react-icons": "^3.5.0",
+        "react-switch": "^4.1.0"
     },
     "scripts": {
         "start": "react-scripts start",
