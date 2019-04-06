@@ -41,10 +41,23 @@ class App extends React.Component {
     };
 
     handleSubmit = (maxTime, users) => {
-        this.setState({ maxValue: maxTime * 60, userCount: users }, () => {
-            this.handleReset();
-            this.toggleSettings();
-        });
+        this.setState(
+            prevState => ({
+                maxValue: maxTime * 60,
+                prevUserCount: prevState.userCount,
+                userCount: users,
+                prevMaxValue: prevState.maxValue,
+            }),
+            () => {
+                if (this.state.prevUserCount !== users) {
+                    this.handleReset();
+                }
+                if (this.state.prevMaxValue !== maxTime) {
+                    this.setState({ active: null });
+                }
+                this.toggleSettings();
+            }
+        );
     };
 
     render() {
@@ -59,7 +72,12 @@ class App extends React.Component {
         return (
             <div key={version} className={classes}>
                 {settings && (
-                    <Settings onCancel={this.toggleSettings} onSubmit={this.handleSubmit} userCount={userCount} defaultTime={maxValue/60}/>
+                    <Settings
+                        onCancel={this.toggleSettings}
+                        onSubmit={this.handleSubmit}
+                        userCount={userCount}
+                        defaultTime={maxValue / 60}
+                    />
                 )}
                 <Timer
                     onTimerClick={this.handleTimerClick}

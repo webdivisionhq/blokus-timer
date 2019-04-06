@@ -40,7 +40,7 @@ main {
     display: grid;
     grid-template-columns: 1fr 60px;
     grid-template-rows: auto auto;
-    grid-row-gap: calc(var(--grid) * 3)
+    grid-row-gap: calc(var(--grid) * 3);
 }
 
 .minutes {
@@ -54,7 +54,8 @@ main {
     border-radius: var(--grid);
 }
 
-.checkedLeft, .checkedRight {
+.checkedLeft,
+.checkedRight {
     display: block;
     line-height: 30px;
 }
