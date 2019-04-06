@@ -58,6 +58,10 @@ main {
     background-color: var(--c-red);
 }
 
+.max-time-input:focus {
+    outline-color: var(--c-red);
+}
+
 .checkedLeft,
 .checkedRight {
     display: block;
