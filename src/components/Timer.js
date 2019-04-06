@@ -15,6 +15,7 @@ class Timer extends React.Component {
     timerId = Date.now();
 
     state = {
+        initialValue: this.props.initialValue,
         value: this.props.initialValue,
         currentAngle: 0,
     };
@@ -55,10 +56,15 @@ class Timer extends React.Component {
         }
     };
 
-    componentWillUnmount() {
+    clearInterval() {
         if (this.intervalId) {
             clearInterval(this.intervalId);
+            this.intervalId = null;
         }
+    }
+
+    componentWillUnmount() {
+        this.clearInterval();
     }
 
     isActive = () => {
@@ -72,10 +78,11 @@ class Timer extends React.Component {
             return;
         }
 
-        if (this.intervalId) {
-            clearInterval(this.intervalId);
-            this.intervalId = null;
-        }
+        this.clearInterval();
+    };
+
+    static getDerivedStateFromProps = ({ initialValue }, { initialValue: prevInitialValue }) => {
+        return initialValue !== prevInitialValue ? { initialValue, value: initialValue } : null;
     };
 
     render() {

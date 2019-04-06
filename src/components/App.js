@@ -41,10 +41,23 @@ class App extends React.Component {
     };
 
     handleSubmit = (maxTime, users) => {
-        this.setState({ maxValue: maxTime * 60, userCount: users }, () => {
-            this.handleReset();
-            this.toggleSettings();
-        });
+        this.setState(
+            prevState => ({
+                maxValue: maxTime * 60,
+                prevUserCount: prevState.userCount,
+                userCount: users,
+                prevMaxValue: prevState.maxValue,
+            }),
+            () => {
+                if (this.state.prevUserCount !== users) {
+                    this.handleReset();
+                }
+                if (this.state.prevMaxValue !== maxTime) {
+                    this.setState({ active: null });
+                }
+                this.toggleSettings();
+            }
+        );
     };
 
     render() {
