@@ -17,10 +17,10 @@ class Settings extends React.Component {
         this.props.onSubmit(+currentTime, userCount);
     };
 
-    handleUserCountChange = (checked) => {
-            this.setState({
-                userCount: checked ? "four": "two",
-            });
+    handleUserCountChange = checked => {
+        this.setState({
+            userCount: checked ? 'four' : 'two',
+        });
     };
 
     handleTimeChange = event => {
@@ -38,19 +38,23 @@ class Settings extends React.Component {
                         <GoSettings className={css.icon} size={40} />
                     </header>
                     <main className={css.settingsGrid}>
-                            <span>MAX TIME <span className={css.minutes}>(min)</span></span>
-                            <input className={css['max-time-input']} onChange={this.handleTimeChange} value={this.state.currentTime}/>
-                       
-                            USERS COUNT
-                            <Switch 
-                                onChange={this.handleUserCountChange}
-                                checked={this.state.userCount === "four"}
-                                uncheckedIcon={<span className={css.checkedLeft}>2</span>}
-                                checkedIcon={<span className={css.checkedRight}>4</span>}
-                                onColor="#c52424"
-                                offColor="#c52424"
-                                />
-                       
+                        <span>
+                            MAX TIME <span className={css.minutes}>(min)</span>
+                        </span>
+                        <input
+                            className={css['max-time-input']}
+                            onChange={this.handleTimeChange}
+                            value={this.state.currentTime}
+                        />
+                        USERS COUNT
+                        <Switch
+                            onChange={this.handleUserCountChange}
+                            checked={this.state.userCount === 'four'}
+                            uncheckedIcon={<span className={css.checkedLeft}>2</span>}
+                            checkedIcon={<span className={css.checkedRight}>4</span>}
+                            onColor="#c52424"
+                            offColor="#c52424"
+                        />
                     </main>
                     <footer className={css.footer}>
                         <Button type="button" onClick={this.props.onCancel} className="foo">
