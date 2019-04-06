@@ -12,7 +12,12 @@ const formatTime = seconds =>
 
 class Timer extends React.Component {
     intervalId = null;
-    timerId = Date.now();
+    static timerId = 1;
+
+    constructor(props) {
+        super(props);
+        this.timerId = Timer.timerId++;
+    }
 
     state = {
         initialValue: this.props.initialValue,
