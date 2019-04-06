@@ -46,7 +46,7 @@ class Timer extends React.Component {
                 this.setState(
                     prevState => ({ value: prevState.value - 1 }),
                     () => {
-                        if (value === 0) {
+                        if (this.state.value === 0) {
                             clearInterval(this.intervalId);
                         }
                     }
