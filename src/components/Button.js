@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import cln from 'classnames';
 import css from './Button.module.css';
 
-function Button({ children, disabled, className, variant, ...rest }) {
+function Button({ children, disabled, className, variant, onClick, ...rest }) {
     const classes = cln(css.button, className, {
         [css[`button--${variant}`]]: variant,
         [css.disabled]: disabled,
     });
 
     return (
-        <button className={classes} {...rest}>
+        <button className={classes} onClick={disabled ? () => {} : onClick} {...rest}>
             {children}
         </button>
     );
