@@ -54,6 +54,15 @@ main {
     border-radius: var(--grid);
 }
 
+.max-time-input::selection {
+    background-color: var(--c-red);
+    color: white;
+}
+
+.max-time-input:focus {
+    outline-color: var(--c-red);
+}
+
 .checkedLeft,
 .checkedRight {
     display: block;

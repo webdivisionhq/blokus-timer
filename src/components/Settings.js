@@ -45,6 +45,7 @@ class Settings extends React.Component {
                             className={css['max-time-input']}
                             onChange={this.handleTimeChange}
                             value={this.state.currentTime}
+                            onFocus={event => event.target.select()}
                         />
                         USERS COUNT
                         <Switch
