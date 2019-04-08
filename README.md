@@ -3,7 +3,7 @@
     <h1 align="center">Blokus Timer</h1>
 </p>
 
-## It's the timer dedicated for [Blokus](http://www.mattelgames.com/en-us/strategy/blokus) - the strategy game for the whole family.
+### The timer app dedicated for [Blokus](http://www.mattelgames.com/en-us/strategy/blokus) - the strategy game for the whole family.
 
 This app allows to make Blokus even more challenging by introducing additional time constraint per player.
 
@@ -19,7 +19,7 @@ For example, in the case of four players:
     <img src="https://user-images.githubusercontent.com/35661234/55684567-9abd6200-594c-11e9-921b-90498db42458.gif">
 </p>
 
-## You can
+### You can
 
 -   switch the number of players (two or four)
 -   set the playing time per player
@@ -41,7 +41,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-<table><tr><td align="center"><a href="https://twitter.com/miguelagol"><img src="https://avatars2.githubusercontent.com/u/35661234?v=4" width="100px;" alt="Michalina Gołąb"/><br /><sub><b>Michalina Gołąb</b></sub></a><br /><a href="https://github.com/webdivision-io/blokus-clock/commits?author=miguelagol" title="Code">💻</a> <a href="#ideas-miguelagol" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-miguelagol" title="Maintenance">🚧</a> <a href="https://github.com/webdivision-io/blokus-clock/issues?q=author%3Amiguelagol" title="Bug reports">🐛</a> <a href="https://github.com/webdivision-io/blokus-clock/commits?author=miguelagol" title="Documentation">📖</a> <a href="#design-miguelagol" title="Design">🎨</a> <a href="#projectManagement-miguelagol" title="Project Management">📆</a> <a href="#review-miguelagol" title="Reviewed Pull Requests">👀</a></td></tr></table>
+<table><tr><td align="center"><a href="https://twitter.com/miguelagol"><img src="https://avatars2.githubusercontent.com/u/35661234?v=4" width="100px;" alt="Michalina Gołąb"/><br /><sub><b>Michalina Gołąb</b></sub></a><br /><a href="https://github.com/webdivision-io/blokus-clock/commits?author=miguelagol" title="Code">💻</a> <a href="#ideas-miguelagol" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-miguelagol" title="Maintenance">🚧</a> <a href="https://github.com/webdivision-io/blokus-clock/issues?q=author%3Amiguelagol" title="Bug reports">🐛</a> <a href="https://github.com/webdivision-io/blokus-clock/commits?author=miguelagol" title="Documentation">📖</a> <a href="#design-miguelagol" title="Design">🎨</a> <a href="#projectManagement-miguelagol" title="Project Management">📆</a> <a href="#review-miguelagol" title="Reviewed Pull Requests">👀</a></td><td align="center"><a href="https://webdivision.dev"><img src="https://avatars0.githubusercontent.com/u/2885483?v=4" width="100px;" alt="Konrad Turczyński"/><br /><sub><b>Konrad Turczyński</b></sub></a><br /><a href="https://github.com/webdivision-io/blokus-clock/commits?author=hiredgun" title="Code">💻</a> <a href="https://github.com/webdivision-io/blokus-clock/issues?q=author%3Ahiredgun" title="Bug reports">🐛</a> <a href="https://github.com/webdivision-io/blokus-clock/commits?author=hiredgun" title="Documentation">📖</a> <a href="#design-hiredgun" title="Design">🎨</a> <a href="#projectManagement-hiredgun" title="Project Management">📆</a> <a href="#review-hiredgun" title="Reviewed Pull Requests">👀</a></td></tr></table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
