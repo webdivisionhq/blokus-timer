@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="public/images/icons/icon-72x72.png">
+    <img src="public/images/icons/icon-120x120.png">
     <h1 align="center">Blokus Timer</h1>
 </p>
 
@@ -34,3 +34,15 @@ For example, in the case of four players:
 
 -   Michalina Gołąb [@miguelag](https://twitter.com/miguelagol)
 -   Konrad Turczyński [@\_hiredgun](https://twitter.com/_hiredgun)
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table><tr><td align="center"><a href="https://twitter.com/miguelagol"><img src="https://avatars2.githubusercontent.com/u/35661234?v=4" width="100px;" alt="Michalina Gołąb"/><br /><sub><b>Michalina Gołąb</b></sub></a><br /><a href="https://github.com/webdivision-io/blokus-clock/commits?author=miguelagol" title="Code">💻</a> <a href="#ideas-miguelagol" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-miguelagol" title="Maintenance">🚧</a></td></tr></table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "miguelagol",
+      "name": "Michalina Gołąb",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/35661234?v=4",
+      "profile": "https://twitter.com/miguelagol",
+      "contributions": [
+        "code",
+        "ideas",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "blokus-clock",
+  "projectOwner": "webdivision-io",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
