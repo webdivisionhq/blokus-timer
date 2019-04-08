@@ -1,6 +1,5 @@
 <p align="center">
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
-    <img src="public/images/icons/icon-72x72.png">
+    <img src="public/images/icons/icon-120x120.png">
     <h1 align="center">Blokus Timer</h1>
 </p>
 
