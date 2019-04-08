@@ -3,7 +3,7 @@
     <h1 align="center">Blokus Timer</h1>
 </p>
 
-## It's the timer dedicated for [Blokus](http://www.mattelgames.com/en-us/strategy/blokus) - the strategy game for the whole family.
+### The timer app dedicated for [Blokus](http://www.mattelgames.com/en-us/strategy/blokus) - the strategy game for the whole family.
 
 This app allows to make Blokus even more challenging by introducing additional time constraint per player.
 
@@ -19,7 +19,7 @@ For example, in the case of four players:
     <img src="https://user-images.githubusercontent.com/35661234/55684567-9abd6200-594c-11e9-921b-90498db42458.gif">
 </p>
 
-## You can
+### You can
 
 -   switch the number of players (two or four)
 -   set the playing time per player
