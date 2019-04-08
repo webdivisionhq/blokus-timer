@@ -22,8 +22,8 @@ For example, in the case of four players:
 ## You can
 
 -   switch the number of players (two or four)
--   set the playing time per user
--   rotate every timer depending on place where You sit
+-   set the playing time per player
+-   rotate each timer depending on the place where a player sits
 -   pause the game at any time
 -   restore the application to the initial settings
 
