@@ -21,12 +21,14 @@ Button.propTypes = {
     disabled: PropTypes.bool,
     className: PropTypes.string,
     variant: PropTypes.oneOf(['cta']),
+    onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
     disabled: false,
     className: '',
     variant: undefined,
+    onClick: undefined,
 };
 
 export default Button;
