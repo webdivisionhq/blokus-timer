@@ -32,7 +32,10 @@
         "doc",
         "design",
         "projectManagement",
-        "review"
+        "review",
+        "maintenance",
+        "business",
+        "ideas"
       ]
     }
   ],
